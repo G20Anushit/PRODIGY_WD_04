@@ -1,0 +1,353 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        :root {
+            --main-color: black;
+            --hover-color: CRIMSON;
+            --body-color: white;
+            --box-color: #EF0D50;
+            --text-color: navy;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--body-color);
+            padding: 0 auto;
+        }
+
+        .header {
+            width: 100%;
+            height: 50px;
+            background-color: var(--box-color);
+            box-shadow: 2px 2px 10px black;
+            position: fixed;
+            padding: 20px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+        }
+
+        .logo {
+            position: relative;
+            font-size: 1.5rem;
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 600;
+        }
+
+        .navbar a {
+            display: inline-block;
+            font-size: 1rem;
+            padding: 5px 15px;
+            border-radius: 20px;
+            color: var(--body-color);
+            text-decoration: none;
+            font-weight: 500px;
+            margin-left: 2rem;
+            transition: .3s;
+        }
+
+        .ham {
+            display: none;
+            color: white;
+            font-size: 2rem;
+        }
+
+        .navbar a:hover {
+            color: var(--hover-color);
+            background-color: var(--body-color);
+        }
+
+        .home {
+            height: 100vh;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 7rem 2rem;
+            gap: 1rem;
+
+        }
+
+        .home-content {
+            margin-left: 2rem;
+        }
+
+        .home-content h3 {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .home-content h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin: -3px 0;
+        }
+
+        .home-content p {
+            font-size: 1.5rem;
+        }
+
+        .image img {
+            border-radius: 50%;
+            width: 20rem;
+            height: 20rem;
+        }
+
+        .home-icon button {
+            width: 100px;
+            height: 35px;
+            border-radius: 10px;
+            margin: 2rem 0.5rem;
+
+        }
+
+        button a {
+            text-decoration: none;
+        }
+
+        .aboutme {
+            width: 150px;
+            height: 40px;
+            border-radius: 20px;
+            font-size: 1rem;
+            background-color: var(--box-color);
+            color: var(--body-color);
+            border: none;
+        }
+        .aboutme a{
+            color: var(--body-color);
+        }
+
+        .aboutme:hover {
+            color: var(--body-color);
+            background-color: rgb(95, 53, 219);
+            box-shadow: -3px 3px 4px crimson;
+        }
+    
+        .about {
+            height: 100vh;
+            margin-top: 2rem;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+        }
+        .about-image img{
+           width: 300px;
+           height: 300px;
+           border-radius: 100%;
+           margin-left: 2rem;
+        }.about-text{
+            margin: 1rem;
+            margin-left: 2rem;
+            padding: 2rem;
+            width: 700px;
+        }
+        .about h1{
+           margin: 1rem;
+           font-size: 2rem;
+        }
+        .about p{
+            margin-top: 1rem;
+            font-size: 1rem;
+        }
+        
+        span{
+            color: #EF0D50;
+        }
+        .space{
+            height: 3rem;
+        }
+        .skill {
+            height: 100vh;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 20rem 2rem;
+        }
+        .skill ol {
+            list-style-type: disc;
+            margin-top: 1rem;
+            word-spacing: 2px;
+        }
+        .skill li{
+            padding:5px;
+        }
+        .contact {
+            display: flex;
+            flex-direction: column; 
+            align-items: center;
+            text-align: center;
+            margin-top: 20rem;
+        }
+        .contact h1{
+            margin-bottom: 4rem;
+        }
+        .contact i{
+            padding: 1rem;
+        }
+        .footer{
+            height: 300px;
+        }
+
+
+        @media screen and (max-width: 720px) {
+            .home {
+                flex-direction: column;
+                gap: 2rem;
+            }
+            .home-content {
+                text-align: center;
+            }
+            .image{
+                margin-bottom: 20rem;
+            }
+            .ham {
+                display: block;
+            }
+
+            .navbar {
+                display: flex;
+                flex-direction: column;
+                background-color: var(--box-color);
+                position: absolute;
+                top: 50px;
+                right: -100%;
+                width: 100%;
+                text-align: center;
+                padding: 1rem;
+            }
+
+            .navbar.active {
+                right: 0;
+            }
+
+            .home-icon button {
+                margin: 2rem 0.2rem;
+            }
+            .about-image{
+                display: none;
+            }
+            .about-text{
+                padding: 1rem;
+                text-align: center;
+            }
+            .skill{
+                flex-direction: column;
+                justify-content: center;
+                align-items: center; 
+                margin-top: 20rem;
+            }
+            .skill h1{
+                margin: 2rem;
+            }
+            .skill ol{
+                margin: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <a href="#" class="logo">PORTFOLIO</a>
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skill">Skill</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <i class='bx bx-menu ham'></i>
+    </header>
+    <section class="home" id="home">
+        <div class="home-content">
+            <h3>Hello I am</h3>
+            <h1>Anu Shit</h1>
+            <h3>and I'm a </h3>
+            <p><span>Frontend Web developer</span> Crafting Web Experiences </p>
+            <div class="home-icon">
+                <button><a href="https://github.com/G20Anushit">Github <i class='bx bxl-github'></i></a></button>
+                <button><a href="https://www.linkedin.com/in/anu-shit-142653209/">Linkedin <i class='bx bxl-linkedin-square'></i></a></button>
+            </div>
+            <button class="aboutme" ><a href="#about">About me</a></button>
+        </div>
+        <div class="image">
+            <img src="propic.png" />
+        </div>
+
+    </section>
+
+    <section class="about" id="about">
+        <div class="about-image">
+            <img src="propic.png" alt="">
+        </div>
+        <div class="about-text"> 
+            <h1>About <span>Me</span></h1>
+            <h4>I am a 2nd year Student pursuing B.Tech in ECE from Institute of engineering ,Kolkata.</h4>
+            <p>I am an Electronics and Communication Engineering undergraduate with a profound interest in web and software
+                developement.My journey in this field began with a fascination for the interconnectedness of the web and its
+                potential to create meaningful experiences. Proficient in HTML, CSS, and JavaScript, I specialize in
+                crafting visually appealing and functional web solutions. A natural problem solver, I thrive on challenges,
+                continuously seeking opportunities to learn and grow in this ever-evolving industry. I am eager to connect
+                with professionals who share my passion and explore new avenues for innovation and collaboration in web and
+                software development.</p>
+        </div>
+    </section>
+     <div class="space"></div>
+    <scetion class="skill" id="skill">
+        <H1><span>Skills</span></H1>
+        <div class="tech-skill">
+            <h3>Technical Skills</h3>
+            <ol>
+                <li>HTML (experienced)</li>
+                <li>CSS (experienced)</li>
+                <li>CANVA (experienced)</li>
+                <li>FIGMA (Basic)</li>
+                <li>JAVASCRIPT (Basic)</li>
+                <li>UI/UX (Intermediate)</li>
+            </ol>
+        </div>
+        <div class="other">
+            <h3>Other Skills</h3>
+            <ol>
+                <li>C language (experienced)</li>
+                <li>JAVA (Intermediate)</li>
+                <li>3D design (Basic)</li>
+                <li>Python (Intermediate)</li>
+                <li>Content Writing (Intermediate) </li>
+            </ol>
+        </div>
+    </scetion>
+    <scetion class="contact" id="contact">
+        <p>get in touch</p>
+        <h1>Contact <span>Me</span></h1>
+        <div class="email"><i class='bx bx-envelope'></i> anushit8111@gmail.com</div>
+        <div class="linked"><i class='bx bxl-linkedin-square'></i> Linkedin</div>
+    </scetion>
+    <div class="footer"> </div>
+
+    <script>
+        const menu = document.querySelector(".ham");
+        const nav = document.querySelector(".navbar");
+        menu.addEventListener("click", () => {
+            nav.classList.toggle("active");
+        });
+    </script>
+</body>
+
+</html>
